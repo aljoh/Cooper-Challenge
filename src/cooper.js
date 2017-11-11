@@ -17,16 +17,13 @@ women = [
   {gender: "woman", minAge: 50, maxAge: 99, aboveAverage: 2199, average: 1699, belowAverage: 1399, poor: 1100}
 ];
 
-function evaluate(attr){
-  this.age = attr.age;
-  this.gender = attr.gender;
-  this.distance = attr.distance;
-  if(this.gender == "man") {
-    var ageGroup = men.find(obj => this.age >= obj.minAge && this.age <= obj.maxAge);
-  } else if (this.gender == "woman") {
-    var ageGroup = women.find(obj => this.age >= obj.minAge && this.age <= obj.maxAge);
+function evaluate(person){
+  if(person.gender == "man") {
+    var ageGroup = men.find(obj => person.age >= obj.minAge && person.age <= obj.maxAge);
+  } else if (person.gender == "woman") {
+    var ageGroup = women.find(obj => person.age >= obj.minAge && person.age <= obj.maxAge);
   }
-  return findAssessment(ageGroup, this.distance);
+  return findAssessment(ageGroup, person.distance);
 }
 
 var findAssessment = function(obj, distance) {
