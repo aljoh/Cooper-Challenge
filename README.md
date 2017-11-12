@@ -1,5 +1,5 @@
 ### Cooper Challenge
-Weekend Challenge for Craft Academy Week 2
+Weekend Challenge for Craft Academy Week 2  
 This is my solution
 
 ## Information
