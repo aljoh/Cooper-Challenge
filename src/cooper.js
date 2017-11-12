@@ -1,244 +1,41 @@
-function cooper(attr){
-  if(attr.gender == "man") {
-    if(attr.age >= 50) {
-      if(attr.distance >= 2400) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2000) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1600) {
-        return "Average";
-      }
-      else if(attr.distance >= 1300) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1300) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 40) {
-      if(attr.distance >= 2500) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2100) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1700) {
-        return "Average";
-      }
-      else if(attr.distance >= 1400) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1400) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 30) {
-      if(attr.distance >= 2700) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2300) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1900) {
-        return "Average";
-      }
-      else if(attr.distance >= 1500) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1500) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 20) {
-      if(attr.distance >= 2800) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2400) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 2200) {
-        return "Average";
-      }
-      else if(attr.distance >= 1600) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1600) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 17) {
-      if(attr.distance >= 3000) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2700) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 2500) {
-        return "Average";
-      }
-      else if(attr.distance >= 2300) {
-        return "Below Average";
-      }
-      else if(attr.distance < 2300) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 15) {
-      if(attr.distance >= 2800) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2500) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 2300) {
-        return "Average";
-      }
-      else if(attr.distance >= 2200) {
-        return "Below Average";
-      }
-      else if(attr.distance < 2200) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 13) {
-      if(attr.distance >= 2700) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2400) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 2200) {
-        return "Average";
-      }
-      else if(attr.distance >= 2100) {
-        return "Below Average";
-      }
-      else if(attr.distance < 2100) {
-        return "Poor";
-      }
-    }
+men = [
+  {minAge: 13, maxAge: 14, aboveAverage: 2699, average: 2399, belowAverage: 2199, poor: 2100},
+  {minAge: 15, maxAge: 16, aboveAverage: 2799, average: 2499, belowAverage: 2299, poor: 2200},
+  {minAge: 17, maxAge: 19, aboveAverage: 2999, average: 2699, belowAverage: 2499, poor: 2300},
+  {minAge: 20, maxAge: 29, aboveAverage: 2799, average: 2399, belowAverage: 2199, poor: 1600},
+  {minAge: 30, maxAge: 39, aboveAverage: 2699, average: 2299, belowAverage: 1999, poor: 1500},
+  {minAge: 40, maxAge: 49, aboveAverage: 2499, average: 2099, belowAverage: 1699, poor: 1400},
+  {minAge: 50, maxAge: 99, aboveAverage: 2399, average: 1999, belowAverage: 1599, poor: 1300}
+];
+women = [
+  {minAge: 13, maxAge: 14, aboveAverage: 1999, average: 1899, belowAverage: 1599, poor: 1500},
+  {minAge: 15, maxAge: 16, aboveAverage: 2099, average: 1999, belowAverage: 1699, poor: 1600},
+  {minAge: 17, maxAge: 19, aboveAverage: 2299, average: 2099, belowAverage: 1799, poor: 1700},
+  {minAge: 20, maxAge: 29, aboveAverage: 2699, average: 2199, belowAverage: 1799, poor: 1500},
+  {minAge: 30, maxAge: 39, aboveAverage: 2499, average: 1999, belowAverage: 1699, poor: 1400},
+  {minAge: 40, maxAge: 49, aboveAverage: 2299, average: 1899, belowAverage: 1499, poor: 1200},
+  {minAge: 50, maxAge: 99, aboveAverage: 2199, average: 1699, belowAverage: 1399, poor: 1100}
+];
+
+function evaluate(person){
+  if(person.gender == "man") {
+    var ageGroup = men.find(obj => person.age >= obj.minAge && person.age <= obj.maxAge);
+  } else if (person.gender == "woman") {
+    var ageGroup = women.find(obj => person.age >= obj.minAge && person.age <= obj.maxAge);
   }
-  else if(attr.gender == "female") {
-    if(attr.age >= 50) {
-      if(attr.distance >= 2200) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 1700) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1400) {
-        return "Average";
-      }
-      else if(attr.distance >= 1100) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1100) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 40) {
-      if(attr.distance >= 2300) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 1900) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1500) {
-        return "Average";
-      }
-      else if(attr.distance >= 1200) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1200) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 30) {
-      if(attr.distance >= 2500) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2000) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1700) {
-        return "Average";
-      }
-      else if(attr.distance >= 1400) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1400) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 20) {
-      if(attr.distance >= 2700) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2200) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1800) {
-        return "Average";
-      }
-      else if(attr.distance >= 1500) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1500) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 17) {
-      if(attr.distance >= 2300) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2100) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1800) {
-        return "Average";
-      }
-      else if(attr.distance >= 1700) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1700) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 15) {
-      if(attr.distance >= 2100) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 2000) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1700) {
-        return "Average";
-      }
-      else if(attr.distance >= 1600) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1600) {
-        return "Poor";
-      }
-    }
-    else if(attr.age >= 13) {
-      if(attr.distance >= 2000) {
-        return "Excellent";
-      }
-      else if(attr.distance >= 1900) {
-        return "Above Average";
-      }
-      else if(attr.distance >= 1600) {
-        return "Average";
-      }
-      else if(attr.distance >= 1500) {
-        return "Below Average";
-      }
-      else if(attr.distance < 1500) {
-        return "Poor";
-      }
-    }
-  }
+  return findAssessment(ageGroup, person.distance);
 }
+
+var findAssessment = function(ageGroup, distance) {
+  if (distance > ageGroup.aboveAverage) {
+    return "Excellent";
+  } else if (distance > ageGroup.average) {
+    return "Above Average";
+  } else if (distance > ageGroup.belowAverage) {
+    return "Average";
+  } else if (distance >= ageGroup.poor) {
+    return "Below Average";
+  } else if (distance < ageGroup.poor) {
+    return "Poor";
+  }
+};
